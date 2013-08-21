@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2216B11F17C49AF8004550D7 /* FileSystemNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2216B11E17C49AF8004550D7 /* FileSystemNode.m */; };
+		2216B15317C4A56A004550D7 /* libssh2.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2216B15217C4A56A004550D7 /* libssh2.1.dylib */; };
+		22A33B8917C4A5FA00678214 /* sshConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A33B8817C4A5FA00678214 /* sshConnect.m */; };
 		22DD959117C3B5270075D075 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22DD959017C3B5270075D075 /* Cocoa.framework */; };
 		22DD959B17C3B5270075D075 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22DD959917C3B5270075D075 /* InfoPlist.strings */; };
 		22DD959D17C3B5270075D075 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DD959C17C3B5270075D075 /* main.m */; };
@@ -19,6 +21,9 @@
 /* Begin PBXFileReference section */
 		2216B11D17C49AF8004550D7 /* FileSystemNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileSystemNode.h; sourceTree = "<group>"; };
 		2216B11E17C49AF8004550D7 /* FileSystemNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileSystemNode.m; sourceTree = "<group>"; };
+		2216B15217C4A56A004550D7 /* libssh2.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libssh2.1.dylib; path = ../libssh2.1.dylib; sourceTree = "<group>"; };
+		22A33B8717C4A5FA00678214 /* sshConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sshConnect.h; sourceTree = "<group>"; };
+		22A33B8817C4A5FA00678214 /* sshConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sshConnect.m; sourceTree = "<group>"; };
 		22DD958D17C3B5270075D075 /* FileBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FileBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22DD959017C3B5270075D075 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		22DD959317C3B5270075D075 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -40,12 +45,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				22DD959117C3B5270075D075 /* Cocoa.framework in Frameworks */,
+				2216B15317C4A56A004550D7 /* libssh2.1.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2216B15417C4A572004550D7 /* libssh2 */ = {
+			isa = PBXGroup;
+			children = (
+				22A33B8717C4A5FA00678214 /* sshConnect.h */,
+				22A33B8817C4A5FA00678214 /* sshConnect.m */,
+				2216B15217C4A56A004550D7 /* libssh2.1.dylib */,
+			);
+			name = libssh2;
+			sourceTree = "<group>";
+		};
 		22DD958417C3B5270075D075 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +101,7 @@
 		22DD959617C3B5270075D075 /* FileBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				2216B15417C4A572004550D7 /* libssh2 */,
 				22DD95A217C3B5270075D075 /* AppDelegate.h */,
 				22DD95A317C3B5270075D075 /* AppDelegate.m */,
 				2216B11D17C49AF8004550D7 /* FileSystemNode.h */,
@@ -174,6 +191,7 @@
 				22DD959D17C3B5270075D075 /* main.m in Sources */,
 				22DD95A417C3B5270075D075 /* AppDelegate.m in Sources */,
 				2216B11F17C49AF8004550D7 /* FileSystemNode.m in Sources */,
+				22A33B8917C4A5FA00678214 /* sshConnect.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,8 +293,8 @@
 				HEADER_SEARCH_PATHS = /usr/local/libssh2/include;
 				INFOPLIST_FILE = "FileBrowser/FileBrowser-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
+					"$(SRCROOT)",
 					"$(inherited)",
-					"\"$(SRCROOT)\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -292,8 +310,8 @@
 				HEADER_SEARCH_PATHS = /usr/local/libssh2/include;
 				INFOPLIST_FILE = "FileBrowser/FileBrowser-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
+					"$(SRCROOT)",
 					"$(inherited)",
-					"\"$(SRCROOT)\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

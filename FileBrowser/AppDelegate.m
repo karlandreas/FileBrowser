@@ -7,14 +7,30 @@
 //
 
 #import "AppDelegate.h"
+#import "sshConnect.h"
 #import "FileSystemNode.h"
 
-// Turn on or off this define to use the new SnowLeopard item-based API
 @implementation AppDelegate
+
+const char *username="superuser";
+const char *server_ip = "10.0.0.10";
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
+    initSSHconnection(username, server_ip);
+}
+
+- (IBAction)closeConnection:(id)sender {
+    go_shutdown();
+}
+
+- (IBAction)callListFolder:(id)sender {
+    const char *command = "ls";
+    const char *folderList = callSSHcommand(command);
+    NSString *folders = [[NSString alloc] initWithCString:folderList encoding:NSUTF8StringEncoding];
+    NSArray *folderArray = [folders componentsSeparatedByString:@"\n"];
+    NSLog(@"%@", folderArray);
 }
 
 #pragma mark - NSBrowser
