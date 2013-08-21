@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2216B11F17C49AF8004550D7 /* FileSystemNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2216B11E17C49AF8004550D7 /* FileSystemNode.m */; };
 		22DD959117C3B5270075D075 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22DD959017C3B5270075D075 /* Cocoa.framework */; };
 		22DD959B17C3B5270075D075 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22DD959917C3B5270075D075 /* InfoPlist.strings */; };
 		22DD959D17C3B5270075D075 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DD959C17C3B5270075D075 /* main.m */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2216B11D17C49AF8004550D7 /* FileSystemNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileSystemNode.h; sourceTree = "<group>"; };
+		2216B11E17C49AF8004550D7 /* FileSystemNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileSystemNode.m; sourceTree = "<group>"; };
 		22DD958D17C3B5270075D075 /* FileBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FileBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22DD959017C3B5270075D075 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		22DD959317C3B5270075D075 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -84,6 +87,8 @@
 			children = (
 				22DD95A217C3B5270075D075 /* AppDelegate.h */,
 				22DD95A317C3B5270075D075 /* AppDelegate.m */,
+				2216B11D17C49AF8004550D7 /* FileSystemNode.h */,
+				2216B11E17C49AF8004550D7 /* FileSystemNode.m */,
 				22DD95A517C3B5270075D075 /* MainMenu.xib */,
 				22DD959717C3B5270075D075 /* Supporting Files */,
 			);
@@ -168,6 +173,7 @@
 			files = (
 				22DD959D17C3B5270075D075 /* main.m in Sources */,
 				22DD95A417C3B5270075D075 /* AppDelegate.m in Sources */,
+				2216B11F17C49AF8004550D7 /* FileSystemNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,7 +272,12 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FileBrowser/FileBrowser-Prefix.pch";
+				HEADER_SEARCH_PATHS = /usr/local/libssh2/include;
 				INFOPLIST_FILE = "FileBrowser/FileBrowser-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -278,7 +289,12 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FileBrowser/FileBrowser-Prefix.pch";
+				HEADER_SEARCH_PATHS = /usr/local/libssh2/include;
 				INFOPLIST_FILE = "FileBrowser/FileBrowser-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -303,6 +319,7 @@
 				22DD95AC17C3B5270075D075 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

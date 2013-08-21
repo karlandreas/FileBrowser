@@ -8,8 +8,15 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface AppDelegate : NSObject <NSApplicationDelegate>
+@class FileSystemNode;
+@interface AppDelegate : NSObject <NSApplicationDelegate, NSBrowserDelegate> {
+    @private
+    FileSystemNode *_rootNode;
+}
 
 @property (assign) IBOutlet NSWindow *window;
+
+@property (weak) IBOutlet NSBrowser *browser;
+
 
 @end
